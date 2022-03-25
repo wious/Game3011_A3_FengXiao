@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     private void WinConfition()
     {
-        if (isStart && pointCounter >= 30)
+        if (isStart && pointCounter >= 60)
         {
             winPanel.SetActive(true);
         }
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     private void LoseCondition()
     {
-        if (isStart && pointCounter < 30 && timer <= 0)
+        if (isStart && pointCounter < 60 && timer <= 0)
         {
             losePanel.SetActive(true);
         }
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         timer = 65;
         menuPanel.SetActive(false);
         dLevel = 1;
-        instructionText.text = "Match 3";
+        instructionText.text = "Match 3 ";
         BoardManager.instance.StartMinigame(dLevel);
         StartCoroutine(countTime(1.0f));
     }
@@ -89,14 +89,14 @@ public class GameManager : MonoBehaviour
         timer = 55;
         menuPanel.SetActive(false);
         dLevel = 2;
-        instructionText.text = "Match 4";
+        instructionText.text = "Match 4 ";
         BoardManager.instance.StartMinigame(dLevel);
         StartCoroutine(countTime(1.0f));
     }
     public void HardLevel()
     {
         isStart = true;
-        timer = 45;
+        timer = 75;
         menuPanel.SetActive(false);
         dLevel = 3;
         instructionText.text = "Match 5 ";
